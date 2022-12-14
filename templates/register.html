@@ -1,0 +1,106 @@
+{% extends "master.html" %}
+
+{% block title %}
+    Εγγραφή
+{% endblock %}
+
+
+{% block content %}
+
+<div class="container login-container">
+    <div class="row">
+        <div class="col-md-6 login-form-1">
+
+            <h3> Φόρμα Εγγραφής </h3>
+
+            <form action="#" method="post">
+                <div class="mb-3">
+
+                    <input type="text" class="form-control" placeholder="Username" name="username" aria-label="username" aria-describedby="basic-addon1">
+
+                    <div id="usernameHelp" class="form-text">
+                        Παρακαλώ δώστε επιθυμητό username
+                    </div>
+
+                    <!-- <ul class="errors">
+                        <li class="alert text-danger"></li>
+                    </ul> -->
+
+                </div>
+                
+                <div class="mb-3">
+
+                    <input type="text" class="form-control" placeholder="Email" name="email" aria-label="email" aria-describedby="basic-addon1">
+
+                    <div id="usernameHelp" class="form-text">
+                        Παρακαλώ δώστε email
+                    </div>
+
+                    <!-- <ul class="errors">
+                        <li class="alert text-danger"></li>
+                    </ul> -->
+
+                </div>
+
+                <div class="mb-3">
+
+                    <input type="password" class="form-control" placeholder="Password" name="password" aria-label="password" aria-describedby="basic-addon1">
+
+                    <div id="usernameHelp" class="form-text">
+                        Παρακαλώ δώστε κωδικό πρόσβασης
+                    </div>
+
+                    <!-- <ul class="errors">
+                        <li class="alert text-danger"></li>
+                    </ul> -->
+
+                </div>
+
+                <div class="mb-3">
+
+                    <input type="password" class="form-control" placeholder="Επιβεβαίωση Password" name="password2" aria-label="password2" aria-describedby="basic-addon1">
+
+                    <div id="usernameHelp" class="form-text">
+                        Παρακαλώ επιβεβαιώστε τον κωδικό
+                    </div>
+
+                    <!-- <ul class="errors">
+                        <li class="alert text-danger"></li>
+                    </ul> -->
+
+                </div>
+                
+                <div class="mb-3">
+
+                    <button type="submit" class="btn btn-primary">
+                        Αποστολή
+                    </button> 
+
+                </div>
+            
+            
+            </form>
+        
+        
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}
