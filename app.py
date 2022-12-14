@@ -8,7 +8,7 @@ from forms import RegisterForm
 
 app = Flask(__name__)
 
-app.config["SECRET_KEY"] = 'my_secret'
+app.config["SECRET_KEY"] = 'ac705a4bd56725c32496cfbb757526fb'
 
 
 @app.route('/')
@@ -29,7 +29,7 @@ def register():
         password2 = form.password2.data
 
         print(username, email, password, password2)
-    return render_template("register.html", pageForm = form)
+    return render_template("register.html", form = form)
 
 
 @app.route('/login/')

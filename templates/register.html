@@ -13,21 +13,21 @@
 
             <h3> Φόρμα Εγγραφής </h3>
 
-            <form action="#" method="post">
+            <form action="#" method="post" novalidate>
                 
-                {{ pageForm.hidden_tag() }}
+                {{ form.hidden_tag() }}
 
                 <div class="mb-3">
-                    {{ pageForm.username.label(class="form-label") }}
-                    {{ pageForm.username(class="form-control") }}
+                    {{ form.username.label(class="form-label") }}
+                    {{ form.username(class="form-control") }}
 
                     <div id="usernameHelp" class="form-text">
                         Παρακαλώ δώστε επιθυμητό username
                     </div>
 
-                    {% if pageForm.username.errors %}
+                    {% if form.username.errors %}
                         <ul class="errors">
-                            {% for error in pageForm.username.errors %}
+                            {% for error in form.username.errors %}
                                 <li class="alert text-danger">
                                     {{ error }}
                                 </li>
@@ -37,16 +37,16 @@
                 </div>
                 
                 <div class="mb-3">
-                    {{ pageForm.email.label(class="form-label") }}
-                    {{ pageForm.email(class="form-control") }}
+                    {{ form.email.label(class="form-label") }}
+                    {{ form.email(class="form-control") }}
 
                     <div id="emailHelp" class="form-text">
                         Παρακαλώ δώστε επιθυμητό email
                     </div>
 
-                    {% if pageForm.email.errors %}
+                    {% if form.email.errors %}
                         <ul class="errors">
-                            {% for error in pageForm.email.errors %}
+                            {% for error in form.email.errors %}
                                 <li class="alert text-danger">
                                     {{ error }}
                                 </li>
@@ -56,16 +56,16 @@
                 </div>
 
                 <div class="mb-3">
-                    {{ pageForm.password.label(class="form-label") }}
-                    {{ pageForm.password(class="form-control", type="password") }}
+                    {{ form.password.label(class="form-label") }}
+                    {{ form.password(class="form-control", type="password") }}
 
                     <div id="passwordHelp" class="form-text">
                         Παρακαλώ δώστε επιθυμητό κωδικό πρόσβασης
                     </div>
 
-                    {% if pageForm.password.errors %}
+                    {% if form.password.errors %}
                         <ul class="errors">
-                            {% for error in pageForm.password.errors %}
+                            {% for error in form.password.errors %}
                                 <li class="alert text-danger">
                                     {{ error }}
                                 </li>
@@ -75,16 +75,16 @@
                 </div>
 
                 <div class="mb-3">
-                    {{ pageForm.password2.label(class="form-label") }}
-                    {{ pageForm.password2(class="form-control", type="password") }}
+                    {{ form.password2.label(class="form-label") }}
+                    {{ form.password2(class="form-control", type="password") }}
 
                     <div id="password2eHelp" class="form-text">
                         Παρακαλώ επιβεβαιώστε τον κωδικό
                     </div>
 
-                    {% if pageForm.password2.errors %}
+                    {% if form.password2.errors %}
                         <ul class="errors">
-                            {% for error in pageForm.password2.errors %}
+                            {% for error in form.password2.errors %}
                                 <li class="alert text-danger">
                                     {{ error }}
                                 </li>
@@ -94,7 +94,7 @@
                 </div>
                 
                 <div class="mb-3">
-                    {{ pageForm.submit(class="btn btn-primary") }}
+                    {{ form.submit(class="btn btn-primary") }}
                 </div>
             
             
@@ -104,22 +104,5 @@
         </div>
     </div>
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 {% endblock %}
