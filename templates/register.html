@@ -14,68 +14,87 @@
             <h3> Φόρμα Εγγραφής </h3>
 
             <form action="#" method="post">
-                <div class="mb-3">
+                
+                {{ pageForm.hidden_tag() }}
 
-                    <input type="text" class="form-control" placeholder="Username" name="username" aria-label="username" aria-describedby="basic-addon1">
+                <div class="mb-3">
+                    {{ pageForm.username.label(class="form-label") }}
+                    {{ pageForm.username(class="form-control") }}
 
                     <div id="usernameHelp" class="form-text">
                         Παρακαλώ δώστε επιθυμητό username
                     </div>
 
-                    <!-- <ul class="errors">
-                        <li class="alert text-danger"></li>
-                    </ul> -->
-
+                    {% if pageForm.username.errors %}
+                        <ul class="errors">
+                            {% for error in pageForm.username.errors %}
+                                <li class="alert text-danger">
+                                    {{ error }}
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
                 </div>
                 
                 <div class="mb-3">
+                    {{ pageForm.email.label(class="form-label") }}
+                    {{ pageForm.email(class="form-control") }}
 
-                    <input type="text" class="form-control" placeholder="Email" name="email" aria-label="email" aria-describedby="basic-addon1">
-
-                    <div id="usernameHelp" class="form-text">
-                        Παρακαλώ δώστε email
+                    <div id="emailHelp" class="form-text">
+                        Παρακαλώ δώστε επιθυμητό email
                     </div>
 
-                    <!-- <ul class="errors">
-                        <li class="alert text-danger"></li>
-                    </ul> -->
-
+                    {% if pageForm.email.errors %}
+                        <ul class="errors">
+                            {% for error in pageForm.email.errors %}
+                                <li class="alert text-danger">
+                                    {{ error }}
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
                 </div>
 
                 <div class="mb-3">
+                    {{ pageForm.password.label(class="form-label") }}
+                    {{ pageForm.password(class="form-control", type="password") }}
 
-                    <input type="password" class="form-control" placeholder="Password" name="password" aria-label="password" aria-describedby="basic-addon1">
-
-                    <div id="usernameHelp" class="form-text">
-                        Παρακαλώ δώστε κωδικό πρόσβασης
+                    <div id="passwordHelp" class="form-text">
+                        Παρακαλώ δώστε επιθυμητό κωδικό πρόσβασης
                     </div>
 
-                    <!-- <ul class="errors">
-                        <li class="alert text-danger"></li>
-                    </ul> -->
-
+                    {% if pageForm.password.errors %}
+                        <ul class="errors">
+                            {% for error in pageForm.password.errors %}
+                                <li class="alert text-danger">
+                                    {{ error }}
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
                 </div>
 
                 <div class="mb-3">
+                    {{ pageForm.password2.label(class="form-label") }}
+                    {{ pageForm.password2(class="form-control", type="password") }}
 
-                    <input type="password" class="form-control" placeholder="Επιβεβαίωση Password" name="password2" aria-label="password2" aria-describedby="basic-addon1">
-
-                    <div id="usernameHelp" class="form-text">
+                    <div id="password2eHelp" class="form-text">
                         Παρακαλώ επιβεβαιώστε τον κωδικό
                     </div>
 
-                    <!-- <ul class="errors">
-                        <li class="alert text-danger"></li>
-                    </ul> -->
-
+                    {% if pageForm.password2.errors %}
+                        <ul class="errors">
+                            {% for error in pageForm.password2.errors %}
+                                <li class="alert text-danger">
+                                    {{ error }}
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
                 </div>
                 
                 <div class="mb-3">
-
-                    <button type="submit" class="btn btn-primary">
-                        Αποστολή
-                    </button> 
-
+                    {{ pageForm.submit(class="btn btn-primary") }}
                 </div>
             
             

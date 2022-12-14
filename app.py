@@ -3,10 +3,12 @@ from flask import (Flask,
                     redirect, 
                     url_for,
                     request)
-import json
+from forms import RegisterForm
 
 
 app = Flask(__name__)
+
+app.config["SECRET_KEY"] = 'my_secret'
 
 
 @app.route('/')
@@ -18,13 +20,16 @@ def index():
 @app.route('/register/', methods=["GET", "POST"])
 def register():
     
-    if request.method == 'POST':
-        username = request.form["username"]
-        email = request.form["email"]
-        password = request.form["password"]
-        password2 = request.form["password2"]
+    form = RegisterForm()
+
+    if request.method == 'POST' and form.validate_on_submit():
+        username = form.username.data
+        email = form.email.data
+        password = form.password.data
+        password2 = form.password2.data
+
         print(username, email, password, password2)
-    return render_template("register.html")
+    return render_template("register.html", pageForm = form)
 
 
 @app.route('/login/')
