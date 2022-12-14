@@ -1,14 +1,10 @@
-from flask import (Flask, 
-                    render_template, 
-                    redirect, 
-                    url_for,
-                    request)
-from forms import RegisterForm, LoginForm, NewArticleForm
-
-
-app = Flask(__name__)
-
-app.config["SECRET_KEY"] = 'ac705a4bd56725c32496cfbb757526fb'
+from flask import (render_template, 
+                   redirect, 
+                   url_for,
+                   request,
+                   flash)
+from FlaskBlogApp.forms import RegisterForm, LoginForm, NewArticleForm
+from FlaskBlogApp import app 
 
 
 @app.route('/')
@@ -43,6 +39,8 @@ def login():
 
         print(email, password)
 
+        flash(f"Η είσοδός του χρήστη {email} έγινε με επιτυχία.", "success")
+
     return render_template("login.html", form = form)
 
 
@@ -63,7 +61,3 @@ def newarticle():
         print(article_title, article_body)
 
     return render_template("new-article.html", form=form)
-
-
-if __name__ == "__main__":
-    app.run(debug=True)
